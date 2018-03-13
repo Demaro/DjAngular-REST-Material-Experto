@@ -1,1 +1,1 @@
-web: gunicorn djang.wsgi --log-file - 
+web: gunicorn tickets.wsgi --log-file - 
