@@ -1977,7 +1977,7 @@ var DataService = (function () {
         this.http = http;
         this.router = router;
         this.af = af;
-        this.API_URL = 'http://127.0.0.1:8000/api/tickets/';
+        this.API_URL = 'https://djangular-rest.herokuapp.com/api/tickets/';
         this.dataChangeUser = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]([]);
         this.dataChange = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]([]);
     }
@@ -2000,7 +2000,7 @@ var DataService = (function () {
     };
     DataService.prototype.getUser = function (email) {
         var _this = this;
-        this.http.get('http://127.0.0.1:8000/api/accounts/by/' + email + '/')
+        this.http.get('https://djangular-rest.herokuapp.com/api/accounts/by/' + email + '/')
             .map(function (data) {
             return data.json();
         }).toPromise().then(function (x) {
@@ -2015,7 +2015,7 @@ var DataService = (function () {
     /** CRUD METHODS */
     DataService.prototype.getEmployeeList = function () {
         var _this = this;
-        this.http.get('http://127.0.0.1:8000/api/tickets/')
+        this.http.get('https://djangular-rest.herokuapp.com/api/tickets/')
             .map(function (data) {
             return data.json();
         }).toPromise().then(function (x) {
@@ -2027,25 +2027,25 @@ var DataService = (function () {
         var body = JSON.stringify(emp);
         var headerOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestMethod */].Post, headers: headerOptions });
-        return this.http.post('http://127.0.0.1:8000/api/accounts/login/', body, requestOptions).map(function (x) { return x.json(); });
+        return this.http.post('https://djangular-rest.herokuapp.com/api/accounts/login/', body, requestOptions).map(function (x) { return x.json(); });
     };
     // ADD, POST METHOD
     DataService.prototype.postEmployee = function (emp) {
         var body = JSON.stringify(emp);
         var headerOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestMethod */].Post, headers: headerOptions });
-        return this.http.post('http://127.0.0.1:8000/api/tickets/create/', body, requestOptions).map(function (x) { return x.json(); });
+        return this.http.post('https://djangular-rest.herokuapp.com/api/tickets/create/', body, requestOptions).map(function (x) { return x.json(); });
     };
     // UPDATE, PUT METHOD
     DataService.prototype.putEmployee = function (id, emp) {
         var body = JSON.stringify(emp);
         var headerOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["e" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestMethod */].Put, headers: headerOptions });
-        return this.http.put('http://127.0.0.1:8000/api/tickets/' + id + '/edit/', body, requestOptions).map(function (res) { return res.json(); });
+        return this.http.put('https://djangular-rest.herokuapp.com/api/tickets/' + id + '/edit/', body, requestOptions).map(function (res) { return res.json(); });
     };
     // DELETE METHOD
     DataService.prototype.deleteEmployee = function (id) {
-        return this.http.delete('http://127.0.0.1:8000/api/tickets/' + id + '/delete/').map(function (res) { return res.json(); });
+        return this.http.delete('https://djangular-rest.herokuapp.com/api/tickets/' + id + '/delete/').map(function (res) { return res.json(); });
     };
     DataService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
